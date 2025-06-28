@@ -1,0 +1,23 @@
+from animal_shelter import AnimalShelter  # Fixed module name (no space)
+
+# Define the connection variables
+USER = 'aacuser'
+PASS = 'SAMPSONSNHUCS340'  # Fixed typo in password
+HOST = 'nv-desktop-services.apporto.com'  # Fixed typo in hostname
+PORT = 33567
+DB = 'AAC'
+COL = 'animals'
+
+# Start the AnimalShelter class
+shelter = AnimalShelter(USER, PASS, HOST, PORT, DB, COL)
+
+# Test data for the create operation
+sample_data = {"animal_id": "K22257", "name": "Kiko", "breed": "German Shepherd"}
+
+# Test the create method
+create_result = shelter.create(sample_data)
+print(f'Create result: {create_result}')
+
+# Test the read method
+read_result = shelter.read({"animal_id": "K22257"})
+print(f'Read result: {read_result}')
